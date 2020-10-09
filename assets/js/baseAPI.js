@@ -12,7 +12,7 @@ $.ajaxPrefilter(function (options) {
     }
 
     options.complete = function (res) {
-      console.log(res);
+      // console.log(res);
       if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
         // 清除浏览器缓存
         localStorage.removeItem('token');
