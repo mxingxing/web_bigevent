@@ -14,7 +14,6 @@ $(function () {
 
     // 1.3 创建裁剪区域
     $image.cropper(options)
-
     // 上传按钮
     $('#btnChooseImage').on('click', function () {
         $('#file').click();
@@ -32,6 +31,7 @@ $(function () {
         // 更改剪裁区域
         // 1.拿到选择地文件
         var file = e.target.files[0];
+        // console.log(file);
         var imgURL = URL.createObjectURL(file);
         $image
             .cropper('destroy')      // 销毁旧的裁剪区域
@@ -40,8 +40,8 @@ $(function () {
 
     })
 
-    
-    $('#btnUpload').on('click', function() {
+
+    $('#btnUpload').on('click', function () {
         var dataURL = $image
             .cropper('getCroppedCanvas', { // 创建一个 Canvas 画布
                 width: 100,
